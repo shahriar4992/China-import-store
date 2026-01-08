@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+}
+
+/* Header */
+header {
+  background: #002147;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+header nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(to right, #004aad, #007bff);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 28px;
+}
+
+.hero p {
+  margin: 10px 0 20px;
+}
+
+.btn-main {
+  background: #ff6a00;
+  padding: 12px 22px;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* Products */
+.products {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card p {
+  color: #ff6a00;
+  font-weight: bold;
+}
+
+.btn-order {
+  display: inline-block;
+  margin: 10px 0 15px;
+  background: #28a745;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Payment */
+.payment {
+  background: #fff3cd;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px dashed #ffbd00;
+}
+
+/* Footer */
+footer {
+  background: #002147;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+}
