@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <title>China Import Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +11,12 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="logo">China Import Store</div>
   <nav>
@@ -26,46 +27,110 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <h1>Trusted China Import Products</h1>
-  <p>Best Price • Fast Delivery • Order Easily</p>
+  <p>Best Price • Fast Delivery • Easy Order</p>
   <a href="#products" class="btn-main">Shop Now</a>
 </section>
 
+<!-- PRODUCTS -->
 <section id="products" class="products">
   <div class="card">
-    <img src="https://via.placeholder.com/300" alt="">
+    <img src="https://via.placeholder.com/300">
     <h3>Smart Gadget</h3>
     <p>৳ 2500</p>
-    <a href="https://wa.me/01602974992" class="btn-order">Order Now</a>
+    <a href="#payment" class="btn-order">Buy Now</a>
   </div>
 
   <div class="card">
-    <img src="https://via.placeholder.com/300" alt="">
-    <h3>China Watch</h3>
-    <p>৳ 1800</p>
-    <a href="https://wa.me/01602974992" class="btn-order">Order Now</a>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/300" alt="">
+    <img src="https://via.placeholder.com/300">
     <h3>Wireless Earbuds</h3>
     <p>৳ 2200</p>
-    <a href="https://wa.me/01602974992" class="btn-order">Order Now</a>
+    <a href="#payment" class="btn-order">Buy Now</a>
   </div>
 </section>
 
+<!-- PAYMENT -->
 <section id="payment" class="payment">
-  <h2><i class="fa-solid fa-credit-card"></i> Payment Method</h2>
-  <p>✔ bKash: 01602974992</p>
-  <p>✔ Nagad: 01602974992</p>
-  <p>✔ Cash on Delivery Available</p>
+  <h2>💳 Payment Method</h2>
+
+  <p><b>bKash:</b> <a href="tel:01XXXXXXXXX">01XXXXXXXXX</a></p>
+  <p><b>Nagad:</b> <a href="tel:01XXXXXXXXX">01XXXXXXXXX</a></p>
+
+  <!-- QR -->
+  <div class="qr-box">
+    <div class="qr">
+      <img src="bkash.png">
+      <p>bKash QR</p>
+    </div>
+    <div class="qr">
+      <img src="nagad.png">
+      <p>Nagad QR</p>
+    </div>
+  </div>
+
+  <hr><br>
+
+  <!-- PAYMENT CONFIRM -->
+  <h3>Payment Confirmation</h3>
+
+  <form onsubmit="return confirmPayment()">
+    <input type="text" id="name" placeholder="Your Name" required><br><br>
+
+    <select id="method" required>
+      <option value="">Select Payment Method</option>
+      <option>bKash</option>
+      <option>Nagad</option>
+    </select><br><br>
+
+    <input type="text" id="trx" placeholder="Transaction ID" required><br><br>
+
+    <button type="submit" class="btn-main">Confirm Payment</button>
+  </form>
+
+  <p id="result"></p>
+
+  <a id="waLink" class="btn-order" target="_blank" style="display:none;">
+    📲 Send Details on WhatsApp
+  </a>
+
+  <p class="notice">
+    ⚠️ Payment will be verified manually.  
+    Fake transaction ID will cancel the order.
+  </p>
 </section>
 
+<!-- FOOTER -->
 <footer id="contact">
-  <p>📞 WhatsApp: 01602974992</p>
+  <p>📞 WhatsApp: 01XXXXXXXXX</p>
   <p>© 2026 China Import Store</p>
 </footer>
+
+<!-- SCRIPT -->
+<script>
+function confirmPayment(){
+  let name = document.getElementById("name").value;
+  let method = document.getElementById("method").value;
+  let trx = document.getElementById("trx").value;
+
+  let orderId = "ORD" + Math.floor(100000 + Math.random()*900000);
+
+  document.getElementById("result").innerHTML =
+    "✅ Payment Received<br>" +
+    "🆔 Order ID: <b>"+orderId+"</b><br>" +
+    "📦 Delivery within 2–3 working days";
+
+  let msg = Payment Done%0AName:${name}%0AMethod:${method}%0ATrx:${trx}%0AOrder:${orderId};
+
+  document.getElementById("waLink").href =
+    "https://wa.me/8801XXXXXXXXX?text="+msg;
+
+  document.getElementById("waLink").style.display="inline-block";
+
+  return false;
+}
+</script>
 
 </body>
 </html>
