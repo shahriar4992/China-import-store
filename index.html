@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <title>China Import Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,8 +56,7 @@
 <section id="payment" class="payment">
   <h2>💳 Payment Method</h2>
 
-  <p><b>bKash:</b> <a href="tel:01XXXXXXXXX">01XXXXXXXXX</a></p>
-  <p><b>Nagad:</b> <a href="tel:01XXXXXXXXX">01XXXXXXXXX</a></p>
+  <p><b>bKash:</b> <a href="tel:01734662985"</a></p>
 
   <!-- QR -->
   <div class="qr-box">
@@ -64,11 +64,6 @@
       <img src="bkash.png">
       <p>bKash QR</p>
     </div>
-    <div class="qr">
-      <img src="nagad.png">
-      <p>Nagad QR</p>
-    </div>
-  </div>
 
   <hr><br>
 
@@ -81,7 +76,6 @@
     <select id="method" required>
       <option value="">Select Payment Method</option>
       <option>bKash</option>
-      <option>Nagad</option>
     </select><br><br>
 
     <input type="text" id="trx" placeholder="Transaction ID" required><br><br>
@@ -103,7 +97,8 @@
 
 <!-- FOOTER -->
 <footer id="contact">
-  <p>📞 WhatsApp: 01XXXXXXXXX</p>
+  <p>📞 WhatsApp: 01602974992</p>
+  <p>📞 WhatsApp: 01734662985</p>
   <p>© 2026 China Import Store</p>
 </footer>
 
@@ -124,7 +119,7 @@ function confirmPayment(){
   let msg = Payment Done%0AName:${name}%0AMethod:${method}%0ATrx:${trx}%0AOrder:${orderId};
 
   document.getElementById("waLink").href =
-    "https://wa.me/8801XXXXXXXXX?text="+msg;
+    "https://wa.me/8801602974992?text="+msg;
 
   document.getElementById("waLink").style.display="inline-block";
 
